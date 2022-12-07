@@ -10,7 +10,7 @@ export interface TheResponse {
 function Card({ onSave }: { onSave: () => void }) {
   const [list, setList] = useState<string[]>([])
   useEffect(() => {
-    fetch('/api')
+    fetch('https://60s-view.deno.dev')
       .then((data) => {
         return data.json()
       }).then((res) => {
