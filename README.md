@@ -6,8 +6,6 @@
 
 （本地跑需要修改 `components/card.tsx` 中的接口为 `/api`，真实接口已设置 CORS）
 
-![demo](/.github/img/demo.jpg)
-
 ## 功能
 
 - 从 “每天60s读懂世界” 接口获取最新数据
