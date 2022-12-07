@@ -4,14 +4,14 @@
 
 在线地址：https://60s-view.netlify.app
 
-（使用真实接口）
+（本地跑需要修改 `components/card.tsx` 中的接口为 `/api`，真实接口已设置 CORS）
 
 ![demo](/.github/img/demo.jpg)
 
 ## 功能
 
 - 从 “每天60s读懂世界” 接口获取最新数据
-- 图片可下载保存（由于还是 canvas，手机端无法保存图片，working...）
+- 图片可下载保存（PC 端和移动端均可）
 
 ## 技术栈
 
