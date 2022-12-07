@@ -9,7 +9,7 @@ export default defineConfig({
       provider: 'bunny',
       fonts: {
         sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono:400,700'],
+        song: '宋体'
       }
     })
   ],
