@@ -4,7 +4,7 @@
 
 在线地址：https://60s-view.netlify.app
 
-（跨域问题暂未解决，这里部署用的还是 mock 数据，你可以 fork 本地跑以获得最新数据）
+（使用真实接口）
 
 ![demo](/.github/img/demo.jpg)
 
