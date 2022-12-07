@@ -10,6 +10,7 @@ specifiers:
   '@unocss/reset': ^0.46.5
   '@unocss/transformer-attributify-jsx': ^0.46.5
   '@vitejs/plugin-react': ^2.2.0
+  chinese-lunar-calendar: ^1.0.1
   eslint: ^8.28.0
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -21,6 +22,7 @@ specifiers:
 dependencies:
   '@iconify/react': 4.0.1_react@18.2.0
   '@unocss/reset': 0.46.5
+  chinese-lunar-calendar: 1.0.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.4.4_biqbaboplfbrettd7655fr4n2y
@@ -1112,6 +1114,10 @@ packages:
   /character-reference-invalid/1.1.4:
     resolution: {integrity: sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==}
     dev: true
+
+  /chinese-lunar-calendar/1.0.1:
+    resolution: {integrity: sha512-T5XjtA6ygOkxjwltYf8dEB1DLsPKewDKajf74fNeT6rH2g9EZPf2AHk6vAlK/SAImTYKXoUNQ3Q4JwN0BduqRA==}
+    dev: false
 
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
