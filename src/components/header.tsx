@@ -21,7 +21,8 @@ function Header() {
   const day = D.getDay() as Nums
   const lunar = getLunar(year, month, date)
   return (
-    <header font="song bold" text="center white">
+    <header font="song bold" text="center white" pb-5>
+      <p font-normal text-sm pt-1>每天 60 秒读懂世界</p>
       <h1 text-5xl py-3>星期{getWeekDay(day)}</h1>
       <p text-lg>{`${year}年${month}月${date}日`.split('').join(' ')}</p>
       <div text-lg>

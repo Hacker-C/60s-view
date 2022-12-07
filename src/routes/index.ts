@@ -1,5 +1,6 @@
 import type React from 'react'
 import Home from '@/pages/home'
+import Download from '@/pages/download'
 import ErrorPage from '@/pages/error-page'
 
 export interface RouteType {
@@ -16,6 +17,13 @@ const routes: RouteType[] = [
     element: Home,
     meta: {
       title: 'Home'
+    }
+  },
+  {
+    path: '/download',
+    element: Download as React.FC,
+    meta: {
+      title: '下载图片'
     }
   },
   {
