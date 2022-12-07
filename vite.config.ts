@@ -10,7 +10,15 @@ export default defineConfig({
     react()
   ],
   server: {
-    port: 3333
+    port: 3333,
+    proxy: {
+      '/api': {
+        target: 'https://60s-view.deno.dev/', 
+        secure: false, // set https
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '/api')
+      },
+    }
   },
   resolve: {
     alias: {
