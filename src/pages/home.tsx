@@ -1,4 +1,5 @@
 import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 function Home() {
   const theme = '#ef8821'
@@ -11,6 +12,7 @@ function Home() {
       }}
     >
       <Header />
+      <Footer />
     </div>
   )
 }
