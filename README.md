@@ -1,76 +1,20 @@
-# Reactease 
+# 60s-view
 
-Reactease is a react starter template with Vite, which means "Create react project with ease".
+> 每天 60 秒看世界，你是懂世界的。
 
-## Features
+在线地址：暂无，你可以 fork 本地跑。
 
-- ⚡ Vite, pnpm
-- 🚀 React
-- ⚓ React Router
-- 🎨 Unocss
-  - Class Property Mode
-  - Attributify Mode
-  - Valueless Attributify Mode
-- 💪 TypeScript, of course(fully typed)
-- 🎈 Iconify for icons
-  - [Icon sets](https://icon-sets.iconify.design/)
-- 😋 ESLint with @antfu/eslint-config, single quotes, no semi, no comma-dangle.
-- 📁 File path alias
-  - `'@/*'` -> `src/*`
+![demo](/.github/img/demo.jpg)
 
+## 功能
 
-### Three modes of Unocss style
+- 从 “每天60s读懂世界” 接口获取最新数据
+- 图片可下载保存
 
-1. Class Property Mode
+## 技术栈
 
-```tsx
-<h2 className='px-2 bg-gray-2 text-2xl text-primary font-bold'>
-  Class Property Mode
-</h2>
-```
+- React (generated from [Reactease](https://reactease.netlify.app/))
 
-2. Attributify Mode
+## 数据来源
 
-```tsx
-<h2 p="x-2" bg="gray-2" text="2xl primary" font="bold">
-  Attributify Mode
-</h2>
-```
-
-3. Valueless Attributify Mode
-
-```tsx
-<h2 px-2 bg-gray-2 text-2xl text-primary font-bold>
-  Valueless Attributify Mode
-</h2>
-```
-
-More: [@unocss/preset-attributify](https://www.npmjs.com/package/@unocss/preset-attributify)
-
-## Install
-
-```
-npx degit hacker-c/react-starter my-react-app
-cd my-react-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
-```
-
-## Usage
-
-### Development
-
-Just run and visit http://localhost:3333
-```
-pnpm dev
-```
-
-### Build
-
-To build the App, run
-```
-pnpm build
-```
-
-### Deploy
-
-You can try [netlify](https://www.netlify.com) or [vercel](https://vercel.com/) or other ways.
+- From [vikiboss/60s](https://github.com/vikiboss/60s)
