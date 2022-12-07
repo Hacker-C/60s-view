@@ -1,0 +1,10 @@
+{
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "unocss.root": "packages/client",
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
