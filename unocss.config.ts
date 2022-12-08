@@ -9,7 +9,7 @@ export default defineConfig({
       provider: 'bunny',
       fonts: {
         sans: 'Roboto',
-        song: ['Arial','苹方','','微软雅黑']
+        song: ['苹方','Arial','PingFang SC','微软雅黑']
       }
     })
   ],
