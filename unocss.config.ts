@@ -9,7 +9,7 @@ export default defineConfig({
       provider: 'bunny',
       fonts: {
         sans: 'Roboto',
-        song: ['Arial','苹方','微软雅黑']
+        song: ['Arial','苹方','','微软雅黑']
       }
     })
   ],
@@ -29,6 +29,12 @@ export default defineConfig({
       medium: 500,
       semibold: 600,
       bold: 700
+    },
+    letterSpacing: {
+      normal: '0',
+      wide: '.03em',
+      wider: '0.3em',
+      widest: '0.6em',
     }
   },
   shortcuts: {

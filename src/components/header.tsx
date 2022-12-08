@@ -24,10 +24,10 @@ function Header() {
     <header font="song bold" text="center white" pb-5>
       <p font-normal text-sm pt-1>每天 60 秒读懂世界</p>
       <h1 text-5xl py-3>星期{getWeekDay(day)}</h1>
-      <p text-lg>{`${year}年${month}月${date}日`.split('').join(' ')}</p>
-      <div text-lg>
-        <span>周 {getWeekDay(day)}</span>
-        <span ml-8>{`农历${lunar.dateStr}`.split('').join(' ')}</span>
+      <p text-lg tracking-wider>{`${year}年${month}月${date}日`}</p>
+      <div text-lg tracking-wider>
+        <span>周{getWeekDay(day)}</span>
+        <span ml-8>{`农历${lunar.dateStr}`}</span>
       </div>
     </header>
   )
