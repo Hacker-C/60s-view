@@ -4,8 +4,6 @@
 
 在线地址：https://60s-view.netlify.app
 
-（本地跑需要修改 `components/card.tsx` 中的接口为 `/api`，真实接口已设置 CORS）
-
 ## 功能
 
 - 从 “每天60s读懂世界” 专栏的接口获取每天最新数据
@@ -14,6 +12,11 @@
 ## 技术栈
 
 - React (generated from [Reactease](https://reactease.netlify.app/))
+
+## 开发
+
+- 前端：`pnpm dev`
+- 后端：参考：[60s-api](https://github.com/Hacker-C/60s)
 
 ## 致谢
 
