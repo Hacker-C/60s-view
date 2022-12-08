@@ -7,10 +7,12 @@ import Card from '@/components/card'
 
 function Home() {
   const appRef = useRef<HTMLDivElement>()
-  const handleSave = () => {
+  const handleSave = (buttonDom: HTMLButtonElement) => {
     if (appRef.current === null)
       return
-    html2canvas(appRef.current as HTMLDivElement)
+    html2canvas(appRef.current as HTMLDivElement, {
+      ignoreElements: element => buttonDom.contains(element)
+    })
       .then((canvas) => {
         const image = canvas.toDataURL()
         const aDownloadLink = document.createElement('a')

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import type { LegacyRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import mockData from '@/mock/60s.json'
 
 export interface TheResponse {
@@ -7,7 +8,8 @@ export interface TheResponse {
   data: string[]
 }
 
-function Card({ onSave }: { onSave: () => void }) {
+function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
+  const buttonRef = useRef<HTMLButtonElement>()
   const [list, setList] = useState<string[]>([])
   useEffect(() => {
     fetch(import.meta.env.VITE_APP_BASEURL)
@@ -31,7 +33,13 @@ function Card({ onSave }: { onSave: () => void }) {
           <i>「你是懂世界的」</i>
         </h1>
         <div flex-1></div>
-        <button onClick={onSave} text="primary bold">保存图片</button>
+        <button
+          ref={buttonRef as LegacyRef<HTMLButtonElement>}
+          onClick={() => onSave(buttonRef.current as HTMLButtonElement)}
+          text="primary bold"
+        >
+          保存图片
+        </button>
       </div>
       <ul font="song bold" text-sm>
         {
