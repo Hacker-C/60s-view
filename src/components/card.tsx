@@ -10,11 +10,10 @@ export interface TheResponse {
 function Card({ onSave }: { onSave: () => void }) {
   const [list, setList] = useState<string[]>([])
   useEffect(() => {
-    fetch('https://60s-view.deno.dev')
+    fetch(import.meta.env.VITE_APP_BASEURL)
       .then((data) => {
         return data.json()
       }).then((res) => {
-        console.log(res)
         setList((res as TheResponse).data)
       }).catch((err) => {
         console.error(err)
