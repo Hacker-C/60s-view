@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      primary: '#ef8821'
+      primary: '#ef8821',
     },
     fontWeight: {
       hairline: 100,

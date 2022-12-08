@@ -8,7 +8,7 @@ export interface TheResponse {
   data: string[]
 }
 
-function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
+function Card({ onSave, theme }: { onSave(buttonDom: HTMLButtonElement): void; theme: string }) {
   const buttonRef = useRef<HTMLButtonElement>()
   const [list, setList] = useState<string[]>([])
   useEffect(() => {
@@ -27,8 +27,10 @@ function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
     <main m-4 bg-white px-3 py-4 card-shadow>
       <div flex items-center mb-5>
         <h1
-          text-primary
           font='song medium'
+          style={{
+            color: theme
+          }}
         >
           <i>「你是懂世界的」</i>
         </h1>
@@ -36,8 +38,11 @@ function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
         <button
           ref={buttonRef as LegacyRef<HTMLButtonElement>}
           onClick={() => onSave(buttonRef.current as HTMLButtonElement)}
-          text="primary bold"
+          text="bold"
           font="song"
+          style={{
+            color: theme
+          }}
         >
           保存图片
         </button>
@@ -49,9 +54,12 @@ function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
       </ul>
       <div>
         <h1
-            text-primary mt-2
-            font='song bold'
-          >
+          mt-2
+          font='song bold'
+          style={{
+            color: theme
+          }}
+        >
             <i>「人生感悟」</i>
         </h1>
         <p font="song bold" text-sm mt-3>{list.at(-1)?.slice(4)}</p>

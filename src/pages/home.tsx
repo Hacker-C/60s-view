@@ -7,6 +7,9 @@ import Card from '@/components/card'
 
 function Home() {
   const appRef = useRef<HTMLDivElement>()
+  const colors = ['#ffb900', '#f5534e', '#f89633', '#038fed', '#63a833', '#5d64e8']
+  const day = (new Date()).getDay()
+  const todayColor = colors[day]
   const handleSave = (buttonDom: HTMLButtonElement) => {
     if (appRef.current === null)
       return
@@ -23,11 +26,14 @@ function Home() {
   }
   return (
     <div
-      w="350px" bg="primary"
+      w="350px"
       ref={appRef as LegacyRef<HTMLDivElement>}
+      style={{
+        backgroundColor: todayColor
+      }}
     >
       <Header />
-      <Card onSave={handleSave}/>
+      <Card onSave={handleSave} theme={todayColor}/>
       <Footer />
     </div>
   )

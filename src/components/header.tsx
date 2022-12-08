@@ -13,20 +13,22 @@ const getWeekDay = (n: Nums) => {
     .get(n)
 }
 
+const D = new Date()
+const year = D.getFullYear()
+const month = D.getMonth() + 1
+const date = D.getDate()
+const day = D.getDay() as Nums
+const lunar = getLunar(year, month, date)
+const weekday = getWeekDay(day)
+
 function Header() {
-  const D = new Date()
-  const year = D.getFullYear()
-  const month = D.getMonth() + 1
-  const date = D.getDate()
-  const day = D.getDay() as Nums
-  const lunar = getLunar(year, month, date)
   return (
     <header font="song bold" text="center white" pb-5>
       <p font-normal text-sm pt-1>每天 60 秒读懂世界</p>
-      <h1 text-5xl py-3>星期{getWeekDay(day)}</h1>
+      <h1 text-5xl py-3>{`${weekday === '四' ? '疯狂' : ''}星期${weekday}`}</h1>
       <p text-lg tracking-wider>{`${year}年${month}月${date}日`}</p>
       <div text-lg tracking-wider>
-        <span>周{getWeekDay(day)}</span>
+        <span>周{weekday}</span>
         <span ml-8>{`农历${lunar.dateStr}`}</span>
       </div>
     </header>
