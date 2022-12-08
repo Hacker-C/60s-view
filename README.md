@@ -8,13 +8,13 @@
 
 ## 功能
 
-- 从 “每天60s读懂世界” 接口获取最新数据
-- 图片可下载保存（PC 端和移动端均可）
+- 从 “每天60s读懂世界” 专栏的接口获取每天最新数据
+- 图片可下载保存（PC 端和移动端均可，手机端需要在浏览器中打开然后保存图片）
 
 ## 技术栈
 
 - React (generated from [Reactease](https://reactease.netlify.app/))
 
-## 数据来源
+## 致谢
 
-- From [vikiboss/60s](https://github.com/vikiboss/60s)
+- 数据和灵感来源于： [vikiboss/60s](https://github.com/vikiboss/60s)
