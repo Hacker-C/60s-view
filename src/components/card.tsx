@@ -24,7 +24,7 @@ function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
       })
   }, [])
   return (
-    <main m-4 bg-white p-3 card-shadow>
+    <main m-4 bg-white px-3 py-4 card-shadow>
       <div flex items-center mb-5>
         <h1
           text-primary
@@ -37,15 +37,25 @@ function Card({ onSave }: { onSave: (buttonDom: HTMLButtonElement) => void }) {
           ref={buttonRef as LegacyRef<HTMLButtonElement>}
           onClick={() => onSave(buttonRef.current as HTMLButtonElement)}
           text="primary bold"
+          font="song"
         >
           保存图片
         </button>
       </div>
       <ul font="song bold" text-sm>
         {
-          list.map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))
+          list.slice(0, -1).map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))
         }
       </ul>
+      <div>
+        <h1
+            text-primary mt-2
+            font='song bold'
+          >
+            <i>「人生感悟」</i>
+        </h1>
+        <p font="song bold" text-sm mt-3>{list.at(-1)?.slice(4)}</p>
+      </div>
     </main>
   )
 }
