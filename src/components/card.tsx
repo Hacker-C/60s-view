@@ -49,7 +49,7 @@ function Card({ onSave, theme }: { onSave(buttonDom: HTMLButtonElement): void; t
       </div>
       <ul font="song bold" text-sm>
         {
-          list.slice(0, -1).map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))
+          list.slice(1, -1).map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))
         }
       </ul>
       <div>
