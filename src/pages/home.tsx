@@ -7,7 +7,7 @@ import Card from '@/components/card'
 
 function Home() {
   const appRef = useRef<HTMLDivElement>()
-  const colors = ['#ffb900', '#f5534e', '#f89633', '#038fed', '#63a833', '#5d64e8']
+  const colors = ['#EF5350', '#FBC02D', '#d6569b', '#52ab62', '#FB8C00', '#3eb4f0', '#7E57C2']
   const day = (new Date()).getDay()
   const todayColor = colors[day]
   const handleSave = (buttonDom: HTMLButtonElement) => {
