@@ -1,5 +1,6 @@
 import type { LegacyRef } from 'react'
 import { useEffect, useRef, useState } from 'react'
+import TodayInHistory from './today-in-history'
 import mockData from '@/mock/60s.json'
 
 export interface TheResponse {
@@ -12,7 +13,7 @@ function Card({ onSave, theme }: { onSave(buttonDom: HTMLButtonElement): void; t
   const buttonRef = useRef<HTMLButtonElement>()
   const [list, setList] = useState<string[]>([])
   useEffect(() => {
-    fetch(import.meta.env.VITE_APP_BASEURL)
+    fetch(import.meta.env.VITE_API_60S)
       .then((data) => {
         return data.json()
       }).then((res) => {
@@ -52,6 +53,7 @@ function Card({ onSave, theme }: { onSave(buttonDom: HTMLButtonElement): void; t
           list.slice(1, -1).map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))
         }
       </ul>
+      <TodayInHistory theme={theme}/>
       <div>
         <h1
           mt-2
