@@ -20,7 +20,9 @@
 ## 开发
 
 - 前端：`pnpm dev`
-- 后端：参考：[60s-api](https://github.com/Hacker-C/60s)
+- 后端：
+  - 新闻数据：[60s](https://github.com/Hacker-C/60s)
+  - 历史上的今天：[today-in-history](https://github.com/Hacker-C/today-in-history)
 
 ## 致谢
 
