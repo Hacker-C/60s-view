@@ -6,9 +6,9 @@ export default defineConfig({
     presetAttributify(),
     presetUno(),
     presetWebFonts({
-      provider: 'bunny',
+      provider: 'none',
       fonts: {
-        sans: 'Roboto',
+        sans: ['Roboto'],
         song: ['苹方','Arial','PingFang SC','微软雅黑']
       }
     })
