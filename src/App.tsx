@@ -10,31 +10,40 @@ interface Props {
 const DomTitle: React.FC<Props> = (props: Props) => {
   const { route } = props
   if (route?.meta?.title)
-    document.title = `${route?.meta?.title} | 每天 60 秒读懂世界`
+    document.title = '每天 60 秒读懂世界'
   return <route.element />
 }
 
 export default function App() {
+  const hour = new Date().getHours()
+  const isNight = !(hour >= 6 && hour <= 18)
   return (
     <div
-      w="350px" bg="primary"
-      className="relative left-[50%] -translate-x-[50%]"
+      style={{
+        backgroundColor: isNight ? '#171717' : '#fff'
+      }}
+      className="min-h-screen"
     >
-    <Router>
-      <Routes>
-        {
-          routes.map((route) => {
-            return (
-              <Route
-                path={route.path}
-                key={route.path}
-                element={<DomTitle route={route}/>}
-              />
-            )
-          })
-        }
-      </Routes>
-    </Router>
+      <div
+        w="350px"
+        className="relative left-[50%] -translate-x-[50%]"
+      >
+        <Router>
+          <Routes>
+            {
+              routes.map((route) => {
+                return (
+                  <Route
+                    path={route.path}
+                    key={route.path}
+                    element={<DomTitle route={route} />}
+                  />
+                )
+              })
+            }
+          </Routes>
+        </Router>
+      </div>
     </div>
   )
 }
