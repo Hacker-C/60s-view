@@ -1,5 +1,4 @@
 {
-  "terminal.integrated.defaultProfile.windows": "Cmder",
   "unocss.root": "packages/client",
   "prettier.enable": false,
   "editor.formatOnSave": false,
