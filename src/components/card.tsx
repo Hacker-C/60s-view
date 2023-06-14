@@ -2,6 +2,7 @@ import type { LegacyRef } from 'react'
 import { useEffect, useRef, useState } from 'react'
 import TodayInHistory from './today-in-history'
 import mockData from '@/mock/60s.json'
+import { _60s } from '@/api'
 
 export interface TheResponse {
   status: number
@@ -13,7 +14,7 @@ function Card({ onSave, theme }: { onSave(buttonDom: HTMLButtonElement): void; t
   const buttonRef = useRef<HTMLButtonElement>()
   const [list, setList] = useState<string[]>([])
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_60S)
+    _60s()
       .then((data) => {
         return data.json()
       }).then((res) => {

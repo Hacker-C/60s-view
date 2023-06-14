@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import historyData from '@/mock/history.json'
+import { history } from '@/api'
 
 interface HistoryType {
   year: string
@@ -11,7 +12,7 @@ interface HistoryType {
 function TodayInHistory({ theme }: { theme: string }) {
   const [historyList, setHistoryList] = useState<HistoryType[]>([])
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_HISTORY)
+    history()
       .then(data => data.json())
       .then((res) => {
         const { data } = res
