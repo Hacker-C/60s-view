@@ -1,18 +1,19 @@
 import html2canvas from 'html2canvas'
 import type { LegacyRef } from 'react'
 import { useRef } from 'react'
+import { useSnapshot } from 'valtio'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Card from '@/components/card'
+import { AppContent } from '@/components/content'
+import { ThemeStore } from '@/store'
 
-function Home() {
+export default function Home() {
   const appRef = useRef<HTMLDivElement>()
-  const colors = ['#EF5350', '#FBC02D', '#d6569b', '#52ab62', '#FB8C00', '#3eb4f0', '#7E57C2']
-  const day = (new Date()).getDay()
-  const todayColor = colors[day]
+  const { theme: todayColor } = useSnapshot(ThemeStore)
   const handleSave = (buttonDom: HTMLButtonElement) => {
-    if (appRef.current === null)
+    if (appRef.current === null) {
       return
+    }
     html2canvas(appRef.current as HTMLDivElement, {
       ignoreElements: element => buttonDom.contains(element)
     })
@@ -33,10 +34,8 @@ function Home() {
       }}
     >
       <Header />
-      <Card onSave={handleSave} theme={todayColor}/>
+      <AppContent onSave={handleSave}/>
       <Footer />
     </div>
   )
 }
-
-export default Home

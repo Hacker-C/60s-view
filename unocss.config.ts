@@ -1,4 +1,10 @@
-import { defineConfig, presetAttributify, presetUno, presetWebFonts } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  presetWebFonts
+} from 'unocss'
 import transformerAttributifyJsx from '@unocss/transformer-attributify-jsx'
 
 export default defineConfig({
@@ -9,32 +15,33 @@ export default defineConfig({
       provider: 'none',
       fonts: {
         sans: ['Roboto'],
-        song: ['苹方','Arial','PingFang SC','微软雅黑']
+        song: ['苹方', 'Arial', 'PingFang SC', '微软雅黑']
       }
-    })
+    }),
+    presetIcons()
   ],
   transformers: [
     transformerAttributifyJsx()
   ],
   theme: {
     colors: {
-      primary: '#ef8821',
+      primary: '#ef8821'
     },
     fontWeight: {
-      hairline: 100,
+      'hairline': 100,
       'extra-light': 100,
-      thin: 200,
-      light: 300,
-      normal: 400,
-      medium: 500,
-      semibold: 600,
-      bold: 700
+      'thin': 200,
+      'light': 300,
+      'normal': 400,
+      'medium': 500,
+      'semibold': 600,
+      'bold': 700
     },
     letterSpacing: {
       normal: '0',
       wide: '.03em',
       wider: '0.3em',
-      widest: '0.6em',
+      widest: '0.6em'
     }
   },
   shortcuts: {

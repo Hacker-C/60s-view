@@ -5,6 +5,8 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/comma-dangle": ["error", "never"],
-    "@typescript-eslint/brace-style": "off"
+    "@typescript-eslint/brace-style": "off",
+    "antfu/if-newline": "off",
+    "curly": "off"
   }
 }
