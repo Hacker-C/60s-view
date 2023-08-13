@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useSnapshot } from 'valtio'
+import { Transition } from '@headlessui/react'
 import { _60s } from '@/api'
-import { ThemeStore } from '@/store'
+import { ThemeStore, TypeStore } from '@/store'
 
 export interface TheResponse {
   status: number
@@ -11,6 +12,7 @@ export interface TheResponse {
 
 export function NewsCard() {
   const [list, setList] = useState<string[]>([])
+  const { types } = useSnapshot(TypeStore)
   useEffect(() => {
     _60s()
       .then((data) => {
@@ -23,8 +25,29 @@ export function NewsCard() {
   }, [])
   return (
     <>
-      <Truth text={list.at(-1)?.slice(4) ?? ''} />
-      <List list={list.slice(1, -1)} />
+      <Transition
+        show={types.includes('truth')}
+        enter="transition-opacity duration-200"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-200"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <Truth text={list.at(-1)?.slice(4) ?? ''} />
+      </Transition>
+      <Transition
+        show={ types.includes('60s')}
+        enter="transition-opacity duration-75"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <List list={list.slice(1, -1)} />
+      </Transition>
+
     </>
   )
 }
@@ -41,7 +64,7 @@ function List({ list }: { list: string[] }) {
     >
       <i>「60 秒读世界」</i>
     </h1>
-    { !list.length && <p text-center text-sm text-red-400>数据获取失败，请尝试开启代理</p> }
+    {!list.length && <p text-center text-sm text-red-400>数据获取失败，请尝试开启代理</p>}
     <ul font="song bold" text-sm>
       {
         list.map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))
