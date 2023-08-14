@@ -1,9 +1,10 @@
 import React from 'react'
+import type { Types } from '@/store'
 
 export interface CheckboxProps {
   children?: React.ReactNode
-  checkedValues?: string[]
-  onChange?: (value: string[]) => void
+  checkedValues?: Types
+  onChange?: (value: Types) => void
   theme?: string
 }
 
@@ -30,11 +31,11 @@ export class Checkbox extends React.Component<CheckboxProps> {
               theme,
               key: comp.props.value,
               checked: checkedValues?.includes(comp.props.value),
-              onClick: (value: string) => {
+              onClick: (value: Types[number]) => {
                 if (checkedValues?.includes(value)) {
-                  onChange?.(checkedValues.filter(v => v !== value))
+                  onChange?.(checkedValues.filter(v => v !== value) as unknown as Types)
                 } else {
-                  onChange?.([...(checkedValues || []), value])
+                  onChange?.([...(checkedValues || []), value] as unknown as Types)
                 }
               }
             }
@@ -72,9 +73,9 @@ function Label(props: LabelProps) {
 interface OptionProps {
   children: React.ReactNode
   theme?: string
-  value?: string
+  value?: Types[number]
   checked?: boolean
-  onClick?: (value?: string) => void
+  onClick?: (value?: Types[number]) => void
 }
 
 function Option({ children, theme, checked, value, onClick }: OptionProps) {
