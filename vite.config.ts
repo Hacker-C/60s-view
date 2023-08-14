@@ -13,11 +13,11 @@ export default defineConfig({
     port: 3333,
     proxy: {
       '/api': {
-        target: 'https://60s-view.deno.dev/', 
+        target: 'https://60s-view.deno.dev/',
         secure: false, // set https
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '/api')
-      },
+      }
     }
   },
   resolve: {

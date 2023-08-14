@@ -7,44 +7,55 @@ export interface CheckboxProps {
   theme?: string
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ children, theme, checkedValues, onChange }) => {
-  // TODO 优化
-  let LabelComponent = children?.find(comp => comp.type.name === 'Label')
-  LabelComponent = React.cloneElement(LabelComponent, { theme, key: LabelComponent.props.value })
-  const OptionComponents = children?.filter(comp => comp.type.name === 'Option')
-  return (
-    <div>
-      {LabelComponent}
-      <hr />
-      {OptionComponents.map((comp: any) => {
-        const newCom = React.cloneElement(
-          comp,
-          {
-            theme,
-            key: comp.props.value,
-            checked: checkedValues?.includes(comp.props.value),
-            onClick: (value: string) => {
-              if (checkedValues?.includes(value)) {
-                onChange?.(checkedValues.filter(v => v !== value))
-              } else {
-                onChange?.([...(checkedValues || []), value])
+export class Checkbox extends React.Component<CheckboxProps> {
+  static Label: (props: LabelProps) => JSX.Element
+  static Option: (props: OptionProps) => JSX.Element
+  constructor(props: CheckboxProps) {
+    super(props)
+  }
+
+  render() {
+    const { children, theme, checkedValues, onChange } = this.props
+    let LabelComponent = (children as any[])?.find(comp => comp.type.name === 'Label')
+    LabelComponent = React.cloneElement(LabelComponent, { theme, key: LabelComponent.props.value })
+    const OptionComponents = (children as any[])?.filter(comp => comp.type.name === 'Option')
+    return (
+      <div>
+        {LabelComponent}
+        <hr />
+        {OptionComponents.map((comp: any) => {
+          const newCom = React.cloneElement(
+            comp,
+            {
+              theme,
+              key: comp.props.value,
+              checked: checkedValues?.includes(comp.props.value),
+              onClick: (value: string) => {
+                if (checkedValues?.includes(value)) {
+                  onChange?.(checkedValues.filter(v => v !== value))
+                } else {
+                  onChange?.([...(checkedValues || []), value])
+                }
               }
             }
-          }
-        )
-        return newCom
-      })}
-    </div>
-  )
+          )
+          return newCom
+        })}
+      </div>
+    )
+  }
 }
 
 // TODO 类型问题待优化
-// @ts-expect-error - 类型待优化
 Checkbox.Label = Label
-// @ts-expect-error - 类型待优化
 Checkbox.Option = Option
 
-function Label(props: { children: React.ReactNode; theme?: string }) {
+interface LabelProps {
+  children: React.ReactNode
+  theme?: string
+}
+
+function Label(props: LabelProps) {
   const { children, theme } = props
   return (
     <label
