@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSnapshot } from 'valtio'
-import { Transition } from '@headlessui/react'
 import { _60s } from '@/api'
-import { ThemeStore, TypeStore } from '@/store'
+import { ThemeStore } from '@/store'
 
 export interface TheResponse {
   status: number
@@ -12,7 +11,6 @@ export interface TheResponse {
 
 export function NewsCard() {
   const [list, setList] = useState<string[]>([])
-  const { types } = useSnapshot(TypeStore)
   useEffect(() => {
     _60s()
       .then((data) => {
@@ -25,29 +23,8 @@ export function NewsCard() {
   }, [])
   return (
     <>
-      <Transition
-        show={types.includes('truth')}
-        enter="transition-opacity duration-200"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-200"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <Truth text={list.at(-1)?.slice(4) ?? ''} />
-      </Transition>
-      <Transition
-        show={ types.includes('60s')}
-        enter="transition-opacity duration-75"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-150"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <List list={list.slice(1, -1)} />
-      </Transition>
-
+      <Truth text={list.at(-1)?.slice(4) ?? ''} />
+      <List list={list.slice(1, -1)} />
     </>
   )
 }
