@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6c2ceba4-d01d-423d-957d-6abff28ca1bc/deploy-status)](https://app.netlify.com/sites/60s-view/deploys)
+
 # 60s-view
 
 每天 60 秒看世界，你是懂世界的。
