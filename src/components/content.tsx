@@ -1,3 +1,4 @@
+import type { LegacyRef } from 'react'
 import { useRef } from 'react'
 import { useSnapshot } from 'valtio'
 import TodayInHistory from './today-in-history'
@@ -18,6 +19,7 @@ export function AppContent({ onSave }: { onSave(buttonDom: HTMLButtonElement): v
       <div flex>
         <div flex='1'></div>
         <button
+          ref={buttonRef as LegacyRef<HTMLButtonElement>}
           onClick={() => onSave(buttonRef.current as HTMLButtonElement)}
           style={{ color: theme }}
           className='i-ic-baseline-download-for-offline text-2xl'

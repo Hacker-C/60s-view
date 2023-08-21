@@ -15,13 +15,8 @@ const DomTitle: React.FC<Props> = (props: Props) => {
 }
 
 export default function App() {
-  const hour = new Date().getHours()
-  const isNight = !(hour >= 6 && hour <= 18)
   return (
     <div
-      style={{
-        backgroundColor: isNight ? '#171717' : '#fff'
-      }}
       className="min-h-screen"
     >
       <div
