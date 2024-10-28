@@ -26,7 +26,7 @@ function TodayInHistory() {
   return (
     <div my-3 font='song bold'>
       <h1 style={{ color: theme }}><i>「历史上的今天」</i></h1>
-    { !historyList.length && <p text-center text-sm text-red-400>数据获取失败，请尝试开启代理</p> }
+    { !historyList.length && <p text-center text-sm text-red-400>数据获取失败，请检查请求接口！</p> }
       <ul text-sm mt-2>
         {historyList.map((item) => {
           return (

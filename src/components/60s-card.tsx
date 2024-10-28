@@ -21,9 +21,12 @@ export function NewsCard() {
         setList([])
       })
   }, [])
+  const lastItem = list.at(-1)
   return (
     <>
-      {/* <Truth text={list.at(-1)?.slice(4) ?? ''} /> */}
+      {
+        !!lastItem?.includes('【微语】') && <Truth text={lastItem.slice(4)} />
+      }
       <List list={list} />
     </>
   )
@@ -41,7 +44,7 @@ function List({ list }: { list: string[] }) {
     >
       <i>「60 秒读世界」</i>
     </h1>
-    {!list.length && <p text-center text-sm text-red-400>数据获取失败，请尝试开启代理</p>}
+    {!list.length && <p text-center text-sm text-red-400>数据获取失败，请检查请求接口！</p>}
     <ul font="song bold" text-sm>
       {
         list.map(text => (<li className='mt-1 leading-6' key={text}>{text}</li>))

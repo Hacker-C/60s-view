@@ -23,6 +23,7 @@ export function AppContent({ onSave }: { onSave(buttonDom: HTMLButtonElement): v
           onClick={() => onSave(buttonRef.current as HTMLButtonElement)}
           style={{ color: theme }}
           className='i-ic-baseline-download-for-offline text-2xl'
+          title='使用 chrome 浏览器获取最佳体验'
         />
       </div>
       <NewsCard />
