@@ -23,8 +23,8 @@ export function NewsCard() {
   }, [])
   return (
     <>
-      <Truth text={list.at(-1)?.slice(4) ?? ''} />
-      <List list={list.slice(1, -1)} />
+      {/* <Truth text={list.at(-1)?.slice(4) ?? ''} /> */}
+      <List list={list} />
     </>
   )
 }
